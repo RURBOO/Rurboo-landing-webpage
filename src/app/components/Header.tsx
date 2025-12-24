@@ -1,7 +1,7 @@
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import logo from '../../../assets/rurboo.svg';
+import logo from '@/assets/rurboo.svg';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

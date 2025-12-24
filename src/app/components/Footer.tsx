@@ -1,4 +1,4 @@
-import logo from '../../assets/rurboo.svg';
+import logo from '@/assets/rurboo.svg';
 
 export function Footer() {
   return (

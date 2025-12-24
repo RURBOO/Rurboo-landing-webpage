@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "rurboo1"
-  }
+  },
+  "targets": {
+    "rurboo1": {
+      "hosting": {
+        "rurboo": [
+          "rurboo"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
