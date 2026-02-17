@@ -1,5 +1,6 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Button } from './ui/button';
+import { JoinWaitlist } from './JoinWaitlist';
 
 export function RideOptions() {
   const rides = [
@@ -46,12 +47,12 @@ export function RideOptions() {
             Whether you're traveling solo or with family, we have the perfect ride option for you.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {rides.map((ride, index) => (
             <div key={index} className="group bg-white rounded-2xl overflow-hidden border-2 border-gray-200 hover:border-blue-400 hover:shadow-2xl transition-all">
               <div className="relative h-48 overflow-hidden">
-                <ImageWithFallback 
+                <ImageWithFallback
                   src={ride.image}
                   alt={ride.type}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -60,11 +61,11 @@ export function RideOptions() {
                   <span className="text-2xl">{ride.icon}</span>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-2xl text-gray-900 mb-2">{ride.type}</h3>
                 <p className="text-gray-600 mb-4">{ride.description}</p>
-                
+
                 <ul className="space-y-2 mb-6">
                   {ride.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
@@ -73,15 +74,15 @@ export function RideOptions() {
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                   <div>
                     <div className="text-sm text-gray-500">Price</div>
                     <div className="text-xl text-blue-600">{ride.price}</div>
                   </div>
-                  <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                  <JoinWaitlist variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
                     Book Now
-                  </Button>
+                  </JoinWaitlist>
                 </div>
               </div>
             </div>

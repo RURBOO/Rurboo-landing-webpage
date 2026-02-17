@@ -1,4 +1,4 @@
-import logo from '@/assets/rurboo.svg';
+import logo from '@/assets/logo.jpg';
 import { Link } from 'react-router-dom';
 
 export function Footer() {
@@ -9,7 +9,7 @@ export function Footer() {
           {/* Logo and tagline */}
           <div className="flex flex-col items-center md:items-start gap-3">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="RURBOO" className="h-10" />
+              <img src={logo} alt="RURBOO" className="h-12 w-auto rounded-md" />
               <span className="text-xl font-bold tracking-tight">RURBOO</span>
             </div>
             <div className="text-sm text-gray-400">
