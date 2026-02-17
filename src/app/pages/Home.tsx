@@ -15,7 +15,10 @@ export function Home() {
             <Header />
             <main>
                 <Hero />
-                <Problem />
+                <div id="about">
+                    <Problem />
+                </div>
+
                 <WhyDifferent />
                 <div id="rides">
                     <RideOptions />
