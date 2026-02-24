@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
                         Back to Home
                     </Link>
                     <h1 className="text-3xl font-bold">Privacy Policy</h1>
-                    <p className="mt-2 text-blue-100">Last updated: February 17, 2026</p>
+                    <p className="mt-2 text-blue-100">Last updated: February 24, 2026</p>
                 </div>
 
                 {/* Content */}
@@ -23,26 +23,36 @@ export function PrivacyPolicy() {
                     <section>
                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Introduction</h2>
                         <p>
-                            Welcome to <strong>Rurboo</strong> ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience on our website and in using our products and services (collectively, "Services"). This policy outlines our practices regarding the collection, use, and disclosure of your information.
+                            Welcome to <strong>RURBOO</strong> ("we," "our," or "us"). We operate two applications:
+                            <strong> RURBOO - SAATHI</strong> (for riders) and <strong>RURBOO - HERO</strong> (for driver-partners).
+                            We are committed to protecting your privacy. This policy explains what personal data we collect,
+                            how we use it, and your rights under applicable Indian data protection laws.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Information We Collect</h2>
                         <div className="bg-blue-50 p-6 rounded-lg border border-blue-100 mb-4">
-                            <h3 className="font-semibold text-blue-900 mb-2">For Riders (Users)</h3>
+                            <h3 className="font-semibold text-blue-900 mb-2">For Riders (RURBOO - SAATHI)</h3>
                             <ul className="list-disc list-inside space-y-1 ml-2">
-                                <li><strong>Personal Identity:</strong> Name, phone number, email address.</li>
-                                <li><strong>Location Data:</strong> Real-time GPS data to facilitate pickups and tracking.</li>
-                                <li><strong>Interaction Data:</strong> App usage details, ride history, and feedback.</li>
+                                <li><strong>Identity:</strong> Name, phone number (used for OTP-based login via Firebase Authentication).</li>
+                                <li><strong>Location Data:</strong> Real-time GPS to detect pickup location, suggest destinations, and track your active ride.</li>
+                                <li><strong>Ride History:</strong> All completed, cancelled, and ongoing ride records stored in Firestore.</li>
+                                <li><strong>Favourite Locations:</strong> Home, Work, and other saved places you add in the app.</li>
+                                <li><strong>Payment Info:</strong> Razorpay transaction IDs for cash/online rides (we do not store full card details).</li>
+                                <li><strong>Camera / Storage:</strong> Used only when you upload a profile photo.</li>
+                                <li><strong>Voice Preferences:</strong> Your TTS (text-to-speech) announcement preference is stored locally on your device.</li>
                             </ul>
                         </div>
                         <div className="bg-green-50 p-6 rounded-lg border border-green-100">
-                            <h3 className="font-semibold text-green-900 mb-2">For Drivers (Partners)</h3>
+                            <h3 className="font-semibold text-green-900 mb-2">For Drivers (RURBOO - HERO)</h3>
                             <ul className="list-disc list-inside space-y-1 ml-2">
-                                <li><strong>Identity & Verification:</strong> Driving license, vehicle registration (RC), Aadhar card.</li>
-                                <li><strong>Vehicle Details:</strong> Make, model, insurance status.</li>
-                                <li><strong>Background Location:</strong> To allocate rides efficiently even when the app is minimized.</li>
+                                <li><strong>Identity & Verification:</strong> Name, phone number, age, profile photo, Driving License, Vehicle RC document images.</li>
+                                <li><strong>Vehicle Details:</strong> Vehicle make, model, registration number, type (bike/auto/car).</li>
+                                <li><strong>Background Location:</strong> Continuous GPS tracking even when the app is minimised, to receive and match nearby ride requests efficiently.</li>
+                                <li><strong>Earnings & Commission:</strong> Daily earnings, commission due, ride counts stored per session.</li>
+                                <li><strong>FCM Token:</strong> Firebase Cloud Messaging token for push notifications (new ride alerts, status updates).</li>
+                                <li><strong>Online/Offline Status:</strong> Your availability status is tracked in real-time in Firestore.</li>
                             </ul>
                         </div>
                     </section>
@@ -50,48 +60,84 @@ export function PrivacyPolicy() {
                     <section>
                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. How We Use Your Data</h2>
                         <ul className="list-disc list-inside space-y-2 ml-4">
-                            <li><strong>Service Provision:</strong> To connect riders with drivers and facilitate payments.</li>
-                            <li><strong>Safety & Security:</strong> To verify identities, track rides for safety, and prevent fraud.</li>
-                            <li><strong>Improvements:</strong> To analyze usage trends and improve our app's performance in rural areas.</li>
-                            <li><strong>Communication:</strong> To send ride updates, promotions, and security alerts.</li>
+                            <li><strong>Ride Matching:</strong> To connect the nearest available RURBOO - HERO driver to the rider's pickup location.</li>
+                            <li><strong>Safety & Tracking:</strong> Active ride location is shared between rider and driver for real-time tracking.</li>
+                            <li><strong>Payments:</strong> Fare calculation based on distance and vehicle type; processed via Razorpay.</li>
+                            <li><strong>Push Notifications:</strong> Ride status updates, new ride requests, and platform announcements.</li>
+                            <li><strong>Voice Announcements:</strong> TTS announcements for ride details, fares, and navigation prompts.</li>
+                            <li><strong>Document Verification:</strong> Driver-uploaded documents (Licence, RC) are reviewed by administrators via the RURBOO Admin Panel for onboarding approval.</li>
+                            <li><strong>Analytics:</strong> Aggregate, anonymised usage data to improve app performance and expand to new rural areas.</li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Data Sharing & Disclosure</h2>
-                        <p>We do not sell your personal data. We only share information in the following circumstances:</p>
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Data Storage & Security</h2>
+                        <p>All data is stored on <strong>Google Firebase (Firestore)</strong> infrastructure within secure Google Cloud data centres.
+                            Document images are stored in <strong>Firebase Storage</strong>. We use Firebase Security Rules to ensure
+                            users can only access their own data. Driver background location data is encrypted in transit and is only
+                            used for ride dispatch — it is never sold to third parties.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Data Sharing & Disclosure</h2>
+                        <p>We do not sell your personal data. We share data only in these circumstances:</p>
                         <ul className="list-disc list-inside space-y-2 ml-4 mt-2">
-                            <li><strong>With Partners:</strong> Riders' basic details (name, pickup location) are shared with the assigned driver.</li>
-                            <li><strong>Legal Requirements:</strong> If required by law enforcement or government authorities.</li>
-                            <li><strong>Emergency Services:</strong> In case of an emergency during an active ride.</li>
+                            <li><strong>Rider ↔ Driver:</strong> Rider's name and pickup location are shared with the assigned driver during an active ride, and vice versa.</li>
+                            <li><strong>Razorpay:</strong> Payment metadata shared for transaction processing only.</li>
+                            <li><strong>Admin Panel:</strong> Driver documents and status are visible to authorised RURBOO administrators for verification.</li>
+                            <li><strong>Legal Requirements:</strong> If required by Indian law enforcement or court orders.</li>
+                            <li><strong>Emergency:</strong> Location data may be shared with emergency services during an active ride if required.</li>
                         </ul>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. User Rights</h2>
-                        <p>You have the right to access, correct, or delete your personal data. You can manage your profile settings within the Rurboo app or contact our support team for assistance.</p>
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Background Location (Drivers)</h2>
+                        <p>
+                            The <strong>RURBOO - HERO</strong> driver app collects location data in the background while you are
+                            marked as "Online." This is <strong>required to receive ride requests</strong> when the app is not
+                            in the foreground. You can stop background location collection by going Offline in the app or
+                            revoking the permission in your device settings. Background location is never collected when you are
+                            marked Offline.
+                        </p>
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Contact Us</h2>
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Your Rights</h2>
+                        <ul className="list-disc list-inside space-y-2 ml-4">
+                            <li>Access or download a copy of your personal data by contacting us.</li>
+                            <li>Update your name, phone, or profile photo within the app.</li>
+                            <li>Request deletion of your account and associated data — your account will be soft-deleted with a 30-day retention window.</li>
+                            <li>Revoke location permission at any time from device settings (note: this will disable core ride booking features).</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Contact Us</h2>
                         <p className="mb-4">
-                            If you have any questions about this Privacy Policy, please contact us at:
+                            For any privacy-related concerns or data deletion requests, contact us at:
                         </p>
                         <address className="not-italic bg-gray-100 p-6 rounded-lg border border-gray-200">
-                            <strong>Rurboo Technologies Pvt Ltd.</strong><br />
-                            Email: support@rurboo.com<br />
-                            Address: Tech Park, Sector 62, Noida, India
+                            <strong>RURBOO</strong><br />
+                            Email: <a href="mailto:adarshpandey@rurboo.com" className="text-blue-600 hover:underline">adarshpandey@rurboo.com</a><br />
+                            Phone: <a href="tel:+918810220691" className="text-blue-600 hover:underline">+91 8810220691</a><br />
+                            Address: Unnao, Uttar Pradesh, India
                         </address>
                     </section>
 
                 </div>
 
                 {/* Footer of Policy */}
-                <div className="bg-gray-50 px-8 py-6 border-t border-gray-200 flex justify-between items-center">
-                    <p className="text-sm text-gray-500">© 2026 Rurboo Technologies</p>
-                    <Button variant="outline" asChild>
-                        <Link to="/terms">View Terms of Service</Link>
-                    </Button>
+                <div className="bg-gray-50 px-8 py-6 border-t border-gray-200 flex justify-between items-center flex-wrap gap-4">
+                    <p className="text-sm text-gray-500">© 2026 RURBOO. All rights reserved.</p>
+                    <div className="flex gap-3">
+                        <Button variant="outline" asChild>
+                            <Link to="/terms">Terms of Service</Link>
+                        </Button>
+                        <Button variant="outline" asChild>
+                            <Link to="/support">Support</Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
