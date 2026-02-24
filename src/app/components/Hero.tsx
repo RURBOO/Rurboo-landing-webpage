@@ -2,9 +2,9 @@ import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import ruralImage from '../../assets/rural.jpeg';
 import { JoinWaitlist } from './JoinWaitlist';
+import { BecomeDriver } from './BecomeDriver';
 
 export function Hero() {
-  const driverUrl = "https://rurboo-admin.web.app";
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white py-20 lg:py-32">
@@ -36,15 +36,13 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </JoinWaitlist>
 
-              <a href={driverUrl} target="_blank" rel="noopener noreferrer">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg w-full sm:w-auto"
-                >
-                  Become a Driver
-                </Button>
-              </a>
+              <BecomeDriver
+                size="lg"
+                variant="outline"
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg w-full sm:w-auto"
+              >
+                Become a Driver
+              </BecomeDriver>
             </div>
 
             {/* STATS */}
