@@ -4,7 +4,7 @@ import ruralImage from '../../assets/rural.jpeg';
 import { JoinWaitlist } from './JoinWaitlist';
 
 export function Hero() {
-  const driverUrl = "https://rurboo-admin-panel.web.app";
+  const driverUrl = "https://rurboo-admin.web.app";
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white py-20 lg:py-32">

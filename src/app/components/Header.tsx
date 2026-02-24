@@ -8,7 +8,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Admin/Driver URL
-  const driverUrl = "https://rurboo-admin-panel.web.app";
+  const driverUrl = "https://rurboo-admin.web.app";
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
