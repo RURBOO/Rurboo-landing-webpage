@@ -103,13 +103,28 @@ export function PrivacyPolicy() {
                     </section>
 
                     <section>
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Your Rights</h2>
-                        <ul className="list-disc list-inside space-y-2 ml-4">
+                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Your Rights & Account Deletion</h2>
+                        <ul className="list-disc list-inside space-y-2 ml-4 mb-4">
                             <li>Access or download a copy of your personal data by contacting us.</li>
                             <li>Update your name, phone, or profile photo within the app.</li>
-                            <li>Request deletion of your account and associated data — your account will be soft-deleted with a 30-day retention window.</li>
                             <li>Revoke location permission at any time from device settings (note: this will disable core ride booking features).</li>
                         </ul>
+                        <div className="bg-red-50 p-6 rounded-lg border border-red-100 mt-6">
+                            <h3 className="font-semibold text-red-900 mb-2">Account Deletion Request</h3>
+                            <p className="text-red-800 mb-4">
+                                You have the right to request the deletion of your account and all associated personal data.
+                                To initiate an account deletion request, please click the button below or email us directly at
+                                <a href="mailto:adarshpandey@rurboo.com?subject=Account Deletion Request" className="font-semibold underline ml-1">adarshpandey@rurboo.com</a>.
+                            </p>
+                            <p className="text-sm text-red-700 mb-4 cursor-text">
+                                Please include your registered phone number in the email so we can locate your account. Your account and associated data will be permanently deleted within 30 days of your request.
+                            </p>
+                            <Button variant="destructive" asChild>
+                                <a href="mailto:adarshpandey@rurboo.com?subject=Account%20Deletion%20Request&body=Hello RURBOO Team,%0D%0A%0D%0AI would like to request the deletion of my account and all associated data.%0D%0A%0D%0AMy registered phone number is: [ENTER YOUR PHONE NUMBER HERE]%0D%0A%0D%0AThank you.">
+                                    Request Account Deletion
+                                </a>
+                            </Button>
+                        </div>
                     </section>
 
                     <section>
